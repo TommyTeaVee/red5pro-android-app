@@ -1,4 +1,4 @@
-Red5 Pro Android Application
+RREADME.mded5 Pro Android Application
 ===
 
 > This Android application project shows how to integrate the [Red5 Pro](http://red5pro.com) SDKs.
@@ -17,7 +17,7 @@ Requirements
 
 * Android SDK
 
-## Android SDK
+### Android SDK
 [Android SDK homepage](http://developer.android.com/sdk/index.html)
 
 From the [Android SDK downloads page](http://developer.android.com/sdk/installing/index.html) you can choose to  install the SDK bundle for:
@@ -31,11 +31,24 @@ Follow the instructions found on those pages for either choice.
 
 Building
 ---
+After installing the [Standalone Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools), you will need to modify the `sdk.dir` path from [local.properties.template](local.properties.template) and save the file as `local.properties` in the project root directory. This file is used by gradle to build the project.
 
+```
+$ echo "sdk.dir=/path/to/android/sdk/install" >> local.properties
+```
+
+_replace `/path/to/android/sdk/install` with the path to where you installed the Android SDK._
+
+Once the `local.properties` file is set, issue the following command to build the project:
+
+### On OSX
 ```
 $ ./gradlew clean build
 ```
 
-APK output to `/app/build/apk`.
+### on Windows
+TBD
 
-![Import Gradle Project](http://infrared5.github.io/red5pro-android-app/images/gradle-setup-1.png)
+
+The Red5Pro APK will be built and available in `Red5Pro/build/outputs/apk`.
+

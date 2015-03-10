@@ -43,14 +43,8 @@ dependencies {
     compile fileTree(dir: 'lib', include: ['*.jar'])
 }
 
-ext {
-    applicationName = "Red5Pro"
-}
-
 def appendVersionNameVersionCode(variant, defaultConfig) {
     variant.outputs.each { output ->
-
-        output.outputFile = file("$project.buildDir/apk/${project.applicationName}.apk")
 
         if (output.zipAlign) {
             def file = output.outputFile

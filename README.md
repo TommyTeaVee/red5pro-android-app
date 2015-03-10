@@ -10,7 +10,7 @@ Quickstart
 
 ### [&gt; Using Eclipse](SETUP-ANDROID-EXLIPSE.md)
 
-### [&gt; Using Command Line](#Building)
+### [&gt; Using Command Line](#building)
 
 Requirements
 ---

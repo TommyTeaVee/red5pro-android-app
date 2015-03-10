@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+//    signingConfigs {
+//        release {
+//            storeFile file("path/to/your/keystore.release")
+//            storePassword "**********"
+//            keyAlias "******"
+//            keyPassword "**********"
+//        }
+//    }
+
+    defaultConfig {
+        applicationId "infrared5.com.red5proandroid"
+        minSdkVersion 15
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+//            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        staging {
+            minifyEnabled false
+            applicationVariants.all { variant ->
+                appendVersionNameVersionCode(variant, defaultConfig)
+            }
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', include: ['*.jar'])
+}
+
+ext {
+    applicationName = "Red5Pro"
+}
+
+def appendVersionNameVersionCode(variant, defaultConfig) {
+    variant.outputs.each { output ->
+
+        output.outputFile = file("$project.buildDir/apk/${project.applicationName}.apk")
+
+        if (output.zipAlign) {
+            def file = output.outputFile
+            def fileName = file.name.replace(".apk", "-" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk")
+            output.outputFile = new File(file.parent, fileName)
+        }
+
+        def file = output.packageApplication.outputFile
+        def fileName = file.name.replace(".apk", "-" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk")
+        output.packageApplication.outputFile = new File(file.parent, fileName)
+
+    }
+}

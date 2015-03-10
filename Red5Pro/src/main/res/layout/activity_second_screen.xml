@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/second_screen_panel"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:name="infrared5.com.red5proandroid.secondscreen.SecondScreenActivity"
+        android:background="#ffffff">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/host_disconnect"
+            android:id="@+id/disconnect"
+            android:layout_gravity="center_horizontal"
+            android:enabled="true"
+            android:clickable="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="onDisconnectClick"/>
+
+        <com.infrared5.secondscreen.client.SecondScreenView
+            xmlns:secondscreen="http://infrared5.com/secondscreen"
+            android:id="@+id/control_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            secondscreen:loading_layout="@layout/loading"
+            android:layout_marginBottom="100dp"/>
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/host_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        android:name="infrared5.com.red5proandroid.hostlist.HostListFragment"
+        tools:layout="@layout/fragment_host_list" />
+
+    <fragment
+        android:id="@+id/control_bar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentBottom="true"
+        android:name="infrared5.com.red5proandroid.ControlBarFragment"
+        tools:layout="@layout/fragment_control_bar" />
+
+ </RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Red5Pro</string>
+    <string name="title_activity_preview">Red5Pro Publish Preview</string>
+    <string name="title_activity_publish">Red5Pro Publish</string>
+    <string name="title_activity_second_screen">Red5Pro Second Screen</string>
+    <string name="title_activity_subscribe">Red5Pro Subscribe</string>
+    <string name="title_activity_settings">Red5Pro Settings</string>
+    <string name="action_settings">Settings</string>
+    <string name="second_screen_settings">Second Screen Settings</string>
+    <string name="subscribe_settings">Playback Settings</string>
+    <string name="publish_settings">Publish Settings</string>
+    <string name="no_host_title">No Hosts</string>
+    <string name="indicator_wifi">WiFi</string>
+    <string name="indicator_registry">Server</string>
+    <string name="indicator_hosts">Hosts Available</string>
+    <string name="host_disconnect">Disconnect</string>
+
+    <string name="preference_host">settings.stream.host</string>
+    <string name="preference_port">settings.stream.port</string>
+    <string name="preference_ss_port">settings.secondscreen.port</string>
+    <string name="preference_app">settings.stream.app</string>
+    <string name="preference_ss_app">settings.secondscreen.app</string>
+    <string name="preference_name">settings.stream.name</string>
+    <string name="preference_bitrate">settings.stream.bitrate</string>
+    <string name="preference_audio">settings.stream.audio</string>
+    <string name="preference_video">settings.stream.video</string>
+
+    <string name="preference_default_host">0.0.0.0</string>
+    <string name="preference_default_port">8554</string>
+    <string name="preference_default_ss_port">8088</string>
+    <string name="preference_default_app">live</string>
+    <string name="preference_default_ss_app">secondscreen</string>
+    <string name="preference_default_name">myStream</string>
+    <string name="preference_default_bitrate">128</string>
+
+    <string name="help_title">Thanks for downloading the Red5 Pro App!</string>
+    <string name="help_message">Most likely you are a developer and know what you have downloaded. Here are a few things to know in case you are confused.</string>
+
+</resources>

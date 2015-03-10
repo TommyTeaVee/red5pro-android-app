@@ -1,0 +1,36 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
+        <item name="android:alertDialogStyle">@style/dialog</item>
+    </style>
+
+    <style name="NoActionBar" parent="AppTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="SpinnerItem">
+        <item name="android:textColor">#ffff0000</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="SpinnerDropDownItem">
+        <item name="android:textColor">#ffff0000</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="dialog">
+        <item name="android:top">@drawable/alert_title</item>
+        <item name="android:topDark">@drawable/alert_title</item>
+    </style>
+
+</resources>

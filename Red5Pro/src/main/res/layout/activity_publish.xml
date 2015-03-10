@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="infrared5.com.red5proandroid.publish.Publish"
+    android:background="#ffffff">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:scaleX="1"
+        android:scaleY="1"
+        />
+
+    <!--<ProgressBar-->
+        <!--style="?android:attr/progressBarStyleLarge"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/progressBar"-->
+        <!--android:layout_below="@+id/surfaceView"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <fragment
+        android:id="@+id/control_bar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentBottom="true"
+        android:name="infrared5.com.red5proandroid.ControlBarFragment"
+        tools:layout="@layout/fragment_control_bar" />
+
+</RelativeLayout>

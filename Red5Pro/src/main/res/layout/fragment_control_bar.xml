@@ -1,0 +1,75 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#DFDFDF"
+    android:layout_marginBottom="0dp"
+    android:layout_alignParentBottom="true">
+
+    <ImageButton
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/btnPublish"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/publish"
+        android:layout_marginLeft="5dp"
+        android:scaleType="centerInside"
+        android:contentDescription="toPublish"
+        android:clickable="false"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/btnSubscribe"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/subscribe"
+        android:layout_marginLeft="85dp"
+        android:scaleType="centerInside"
+        android:clickable="false"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/btnSecondScreen"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="165dp"
+        android:src="@drawable/second"
+        android:scaleType="centerInside"
+        android:background="#00000000" />
+
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:src="@drawable/settings_grey"
+        android:contentDescription="Settings"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="59dp"
+        android:layout_marginLeft="242dp"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:scaleType="fitCenter" />
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/btnRecord"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="right"
+        android:src="@drawable/empty_red"
+        android:scaleType="centerInside"
+        android:background="#00000000" />
+
+    <ImageButton
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:id="@+id/btnCamera"
+        android:layout_marginTop="34dp"
+        android:layout_marginRight="70dp"
+        android:layout_gravity="right"
+        android:src="@drawable/camera_grey"
+        android:scaleType="fitCenter"
+        android:background="#00000000" />
+
+</FrameLayout>

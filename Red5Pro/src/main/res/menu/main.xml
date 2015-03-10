@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Main" >
+
+    <item android:id="@+id/second_screen_settings"
+    android:title="@string/second_screen_settings"
+    android:orderInCategory="100"
+    android:showAsAction="never" />
+
+    <item android:id="@+id/subscribe_settings"
+        android:title="@string/subscribe_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/publish_settings"
+        android:title="@string/publish_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+</menu>

@@ -1,4 +1,4 @@
-RREADME.mded5 Pro Android Application
+Red5 Pro Android Application
 ===
 
 > This Android application project shows how to integrate the [Red5 Pro](http://red5pro.com) SDKs.
@@ -18,7 +18,8 @@ Requirements
 * Android SDK
 
 ### Android SDK
-[Android SDK homepage](http://developer.android.com/sdk/index.html)
+
+[&gt; Android SDK homepage](http://developer.android.com/sdk/index.html)
 
 From the [Android SDK downloads page](http://developer.android.com/sdk/installing/index.html) you can choose to  install the SDK bundle for:
 

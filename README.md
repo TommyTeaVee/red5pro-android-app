@@ -34,7 +34,7 @@ Building
 After installing the [Standalone Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools), you will need to modify the `sdk.dir` path from [local.properties.template](local.properties.template) and save the file as `local.properties` in the project root directory. This file is used by gradle to build the project.
 
 ```
-$ echo "sdk.dir=/path/to/android/sdk/install" >> local.properties
+$ echo "sdk.dir=/path/to/android/sdk/install" > local.properties
 ```
 
 _replace `/path/to/android/sdk/install` with the path to where you installed the Android SDK._

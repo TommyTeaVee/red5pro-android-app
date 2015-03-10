@@ -8,7 +8,7 @@ Quickstart
 
 ### [&gt; Using Android Studio](SETUP-ANDROID-STUDIO.md)
 
-### [&gt; Using Eclipse](SETUP-ANDROID-EXLIPSE.md)
+### [&gt; Using Eclipse](SETUP-ANDROID-ECLIPSE.md)
 
 ### [&gt; Using Command Line](#building)
 
@@ -31,6 +31,9 @@ Follow the instructions found on those pages for either choice.
 
 Building
 ---
+
+The [Gradle Wrapper](https://gradle.org/docs/current/userguide/gradle_wrapper.html) is used to build the **Red5 Pro** APK.
+
 After installing the [Standalone Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools), you will need to modify the `sdk.dir` path from [local.properties.template](local.properties.template) and save the file as `local.properties` in the project root directory. This file is used by gradle to build the project.
 
 ```
@@ -47,7 +50,7 @@ $ ./gradlew clean build
 ```
 
 ### on Windows
-TBD
+**TBD** (Double click on `gradle.bat`?)
 
 
 The Red5Pro APK will be built and available in `Red5Pro/build/outputs/apk`.

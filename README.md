@@ -1,7 +1,7 @@
 Red5 Pro Android Application
 ===
 
-> This Android application project shows how to integrate the [Red5 Pro](http://red5pro.com) SDKs.
+> This Android application project shows how to integrate the [Red5 Pro](http://red5pro.com) SDKs to enable live streaming and second screen experiences on a mobile device.
 
 Quickstart
 ---
@@ -19,7 +19,7 @@ Requirements
 * [Android SDK](#android-sdk)
 
 ### Red5 Pro Server
-The __Red5 Pro__ is build on the Open Source [Red5 Server] and allows to build scalable live streaming and second screen applications.
+The __Red5 Pro__ is build on the Open Source [Red5 Server](https://github.com/Red5/red5-server) and allows to build scalable live streaming and second screen applications.
 
 The example application provided in this project repository integrates the Red5 Pro Native SDKs  and libraries that enable live streaming and second screen experiences. You will need to setup a Red5 Pro server - either on your local machine or remotely - in order to stream video and communicate with a second screen host.
 

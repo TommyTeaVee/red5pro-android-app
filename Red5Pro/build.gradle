@@ -4,15 +4,6 @@ android {
     compileSdkVersion 20
     buildToolsVersion "20.0.0"
 
-//    signingConfigs {
-//        release {
-//            storeFile file("path/to/your/keystore.release")
-//            storePassword "**********"
-//            keyAlias "******"
-//            keyPassword "**********"
-//        }
-//    }
-
     defaultConfig {
         applicationId "infrared5.com.red5proandroid"
         minSdkVersion 15
@@ -23,7 +14,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-//            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 

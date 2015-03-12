@@ -17,11 +17,15 @@ $ echo "sdk.dir=/path/to/android/sdk/install" > local.properties
 $ ./gradlew clean build
 ```
 
+[more information](#building-on-the-command-line)
+
 Requirements
 ---
 
 * [Red5 Pro Server](http://red5pro.com)
 * [Android SDK](#android-sdk)
+
+The Red5 Pro SDKs have a minimum support for [Android 4.1 / API Level: 16](http://developer.android.com/about/versions/android-4.1.html).
 
 ### Red5 Pro Server
 The __Red5 Pro__ is build on the Open Source [Red5 Server](https://github.com/Red5/red5-server) and allows to build scalable live streaming and second screen applications.
@@ -48,7 +52,7 @@ Follow the instructions found on those pages for either choice.
 Building on the Command Line
 ---
 
-### Clone this repo
+### Clone this repository
 
 Change directory into desired location and issue the following:
 

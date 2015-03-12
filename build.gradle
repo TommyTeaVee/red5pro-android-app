@@ -17,19 +17,3 @@ buildscript {
         }
     }
 }
-
-//project(':app').afterEvaluate { app ->
-//
-//    task dist(type:Sync) {
-//        destinationDir = file("$buildDir/dist")
-//        println destinationDir
-//    }
-//
-//    task distZip(type:Zip, dependsOn:dist) {
-//        destinationDir = buildDir
-//        baseName = "red5pro-android-" + app.getProperty("defaultConfig").getProperty("versionName")
-//        println baseName
-//        from dist.destinationDir
-//    }
-//
-//}

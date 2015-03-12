@@ -8,9 +8,14 @@ Quickstart
 
 ### [&gt; Using Android Studio](SETUP-ANDROID-STUDIO.md)
 
-### [&gt; Using Eclipse](SETUP-ANDROID-ECLIPSE.md)
+### [&gt; Using Command Line](#building-on-the-command-line)
 
-### [&gt; Using Command Line](#building)
+```
+$ git clone git@github.com:infrared5/red5pro-android-app.git
+$ cd red5pro-android-app
+$ echo "sdk.dir=/path/to/android/sdk/install" > local.properties
+$ ./gradlew clean build
+```
 
 Requirements
 ---
@@ -38,14 +43,29 @@ From the [Android SDK downloads page](http://developer.android.com/sdk/installin
 
 Follow the instructions found on those pages for either choice.
 
-**If you choose to install with [Android Studio](http://developer.android.com/sdk/index.html), follow along with the [Setup Android Studio Project](SETUP-ANDROID-STUDIO.md) instructions for importing and building the project.**
+**If you choose to install with [Android Studio](http://developer.android.com/sdk/index.html), follow along with the [Android Studio Project Setup](SETUP-ANDROID-STUDIO.md) instructions for importing and building the project.**
 
-Building
+Building on the Command Line
 ---
+
+### Clone this repo
+
+Change directory into desired location and issue the following:
+
+```
+$ git clone git@github.com:infrared5/red5pro-android-app.git
+$ cd red5pro-android-app
+```
+
+Once you have cloned this repository onto your local machine and are in the repositories root directory, you can build the project.
+
+### Gradle Build
 
 The [Gradle Wrapper](https://gradle.org/docs/current/userguide/gradle_wrapper.html) is used to build the **Red5 Pro** APK.
 
-After installing the [Standalone Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools), you will need to modify the `sdk.dir` path from [local.properties.template](local.properties.template) and save the file as `local.properties` in the project root directory. This file is used by gradle to build the project.
+This project includes the *Gradle* libraries required to build the application, so there are no additional dependencies to be installed in order to continue.
+
+After installing the [Standalone Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools), you will need to modify the `sdk.dir` path from [local.properties.template](local.properties.template) and save the file as `local.properties` in the project root directory. This file is used by *Gradle* to build the project.
 
 ### On &#42;nix
 

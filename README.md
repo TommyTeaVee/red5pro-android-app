@@ -15,7 +15,17 @@ Quickstart
 Requirements
 ---
 
+* [Red5 Pro Server](http://red5pro.com)
 * [Android SDK](#android-sdk)
+
+### Red5 Pro Server
+The __Red5 Pro__ is build on the Open Source [Red5 Server] and allows to build scalable live streaming and second screen applications.
+
+The example application provided in this project repository integrates the Red5 Pro Native SDKs  and libraries that enable live streaming and second screen experiences. You will need to setup a Red5 Pro server - either on your local machine or remotely - in order to stream video and communicate with a second screen host.
+
+More information about Red5 Pro, its SDKs and setup can be found in the online [Red5 Pro Documentation](http://red5pro.com/docs/).
+
+**To register an account and start using Red5 Pro in production, visit the [Red5 Pro Accounts](https://account.red5pro.com/register)!**
 
 ### Android SDK
 
@@ -28,7 +38,7 @@ From the [Android SDK downloads page](http://developer.android.com/sdk/installin
 
 Follow the instructions found on those pages for either choice.
 
-**If you choose to install with [Android Studio](http://developer.android.com/sdk/index.html), follow along with the [SETUP-ANDROID-STUDIO](SETUP-ANDROID-STUDIO.md) instructions for importing and building the project.**
+**If you choose to install with [Android Studio](http://developer.android.com/sdk/index.html), follow along with the [Setup Android Studio Project](SETUP-ANDROID-STUDIO.md) instructions for importing and building the project.**
 
 Building
 ---
@@ -44,7 +54,7 @@ After installing the [Standalone Android SDK](http://developer.android.com/sdk/i
 $ echo "sdk.dir=/path/to/android/sdk/install" > local.properties
 ```
 
-_replace `/path/to/android/sdk/install` with the path to where you installed the Android SDK._a
+_replace `/path/to/android/sdk/install` with the path to where you installed the Android SDK._
 
 Once the `local.properties` file is set, issue the following command to build the project:
 

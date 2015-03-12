@@ -1,8 +1,6 @@
 package infrared5.com.red5proandroid.publish;
 
 import android.app.Activity;
-import android.app.DialogFragment;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -17,10 +15,8 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.red5pro.streaming.R5Connection;
@@ -29,10 +25,9 @@ import com.red5pro.streaming.R5StreamProtocol;
 import com.red5pro.streaming.config.R5Configuration;
 import com.red5pro.streaming.event.R5ConnectionEvent;
 import com.red5pro.streaming.event.R5ConnectionListener;
-import com.red5pro.streaming.event.R5StreamEvent;
-import com.red5pro.streaming.event.R5StreamListener;
 import com.red5pro.streaming.source.R5Camera;
 import com.red5pro.streaming.source.R5Microphone;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +49,7 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
     private R5Camera r5Cam;
     private R5Microphone r5Mic;
     private SurfaceView surfaceForCamera;
+
     static {
         if(config==null){
             config = new PublishStreamConfig();
@@ -62,6 +58,7 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
 
     protected Camera camera;
     protected boolean isPublishing = false;
+
     R5Stream stream;
 
     public final static String TAG = "Preview";
@@ -109,7 +106,6 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
 
         v.setKeepScreenOn(true);
 
-
         ControlBarFragment controlBar = (ControlBarFragment)getFragmentManager().findFragmentById(R.id.control_bar);
         controlBar.setSelection(AppState.PUBLISH);
         controlBar.displayPublishControls(true);
@@ -122,13 +118,13 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
 
         ImageButton cameraButton = (ImageButton) findViewById(R.id.btnCamera);
         cameraButton.setOnClickListener(this);
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-       // showCamera();
-       openSettings();
+        openSettings();
     }
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -137,9 +133,6 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
     }
     @Override
     protected void onPause() {
-
-      //  stopPublishing();
-      ///  stopCamera();
         super.onPause();
     }
 
@@ -171,10 +164,7 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
             SettingsDialogFragment newFragment = SettingsDialogFragment.newInstance(AppState.PUBLISH);
             newFragment.show(getFragmentManager().beginTransaction(), "settings_dialog");
 
-            //Spinner spinner  = (Spinner)findViewById(R.id.resolutionPicker);
-
             List<String> sb = new ArrayList<String>();
-
             for(Camera.Size size:this.sizes){
                 if((size.width/2)%16!=0){
                     continue;
@@ -224,8 +214,6 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
     private void showCamera() {
         if(camera == null) {
             camera = Camera.open(cameraSelection);
-            //camera.stopFaceDetection();
-
             camera.setDisplayOrientation(90);
             sizes=camera.getParameters().getSupportedPreviewSizes();
             SurfaceView sufi = (SurfaceView) findViewById(R.id.surfaceView);
@@ -254,14 +242,10 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
     //called by record button
     private void startPublishing() {
         if(!isPublishing) {
-            //camera.stopPreview();
 
             Handler mHand = new Handler();
-            //setup the stream object
 
             stream = new R5Stream(new R5Connection(new R5Configuration(R5StreamProtocol.RTSP, Publish.config.host,  Publish.config.port, Publish.config.app, Publish.config.app, 1.0f)));
-
-
             stream.setLogLevel(R5Stream.LOG_LEVEL_DEBUG);
 
             stream.connection.addListener(new R5ConnectionListener() {
@@ -302,15 +286,14 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
                 }
             });
 
-
             camera.stopPreview();
-
 
             //assign the surface to show the camera output
             this.surfaceForCamera = (SurfaceView) findViewById(R.id.surfaceView);
             stream.setView((SurfaceView) findViewById(R.id.surfaceView));
+
             //add the camera for streaming
-            if(selected_item!=null){
+            if(selected_item != null) {
                 Log.d("publisher","selected_item "+selected_item);
                 String bits[] = selected_item.split("x");
                 int pW= Integer.valueOf(bits[0]);
@@ -319,13 +302,13 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
                     pW=320;
                     pH=240;
                 }
-
                 Camera.Parameters parameters = camera.getParameters();
                 parameters.setPreviewSize(pW, pH);
                 camera.setParameters(parameters);
                 r5Cam = new R5Camera(camera,pW,pH);
                 r5Cam.setBitrate(Publish.config.bitrate);
-            }else{
+            }
+            else {
                 Camera.Parameters parameters = camera.getParameters();
                 parameters.setPreviewSize(320, 240);
 
@@ -333,19 +316,22 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
                 r5Cam = new R5Camera(camera,320,240);
                 r5Cam.setBitrate(config.bitrate);
             }
-            if(cameraSelection==1)
-                r5Cam.setOrientation(270);
-            else
-                r5Cam.setOrientation(90);
 
+            if(cameraSelection==1) {
+                r5Cam.setOrientation(270);
+            }
+            else {
+                r5Cam.setOrientation(90);
+            }
             r5Mic = new R5Microphone();
 
-            if(config.video)
-            stream.attachCamera(r5Cam);
+            if(config.video) {
+                stream.attachCamera(r5Cam);
+            }
 
-            if(config.audio)
-            stream.attachMic(r5Mic);
-
+            if(config.audio) {
+                stream.attachMic(r5Mic);
+            }
 
             //currently a timing hack. Won't be in final SDK
             mHand.postDelayed(new Runnable() {
@@ -358,6 +344,7 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
                 }
 
             }, 1000);
+
         }
     }
 
@@ -388,6 +375,7 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
         else if(view.getId() == R.id.btnCamera) {
             toggleCamera();
         }
+
     }
 
     @Override
@@ -400,15 +388,13 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
         catch(Exception e){
             e.printStackTrace();
         };
-    }
-
-    @Override
-    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
 
     }
 
     @Override
-    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
-    }
+    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {}
+
+    @Override
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {}
 
 }

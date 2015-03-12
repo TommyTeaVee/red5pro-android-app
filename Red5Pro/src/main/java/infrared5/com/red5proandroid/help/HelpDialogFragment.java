@@ -13,7 +13,6 @@ import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.URLSpan;
-import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,9 +21,6 @@ import android.widget.TextView;
 import infrared5.com.red5proandroid.BuildConfig;
 import infrared5.com.red5proandroid.R;
 
-/**
- * Created by toddanderson on 11/4/14.
- */
 public class HelpDialogFragment extends DialogFragment {
 
     public static HelpDialogFragment newInstance() {
@@ -66,8 +62,6 @@ public class HelpDialogFragment extends DialogFragment {
         TextView helpVersion = (TextView) v.findViewById(R.id.help_version);
 
         helpVersion.setText(BuildConfig.VERSION_NAME);
-//        helpOne.setMovementMethod(LinkMovementMethod.getInstance());
-//        helpTwo.setMovementMethod(LinkMovementMethod.getInstance());
         String str1 = "<strong>1.</strong> In order to use this app you will need a working installation of <a href=\"http://red5pro.com\" style=\"color:#E21800\">Red5 Pro Server</a>.";
         String str2 = "<strong>2.</strong> You can use this app to stream live video from your device\'s camera, view another live stream, and/or connect to other Red5 Pro Second Screen applications for all kinds of experiences.";
         String str3 = "<p><strong>3.</strong> All the code for this app is live and free to use on <a href=\"https://github.com/infrared5/red5pro-example-apps\"><font color=\"#E21800\">GitHub</font></a>, and an overview of how it’s put together is available on our <a href=\"http://red5pro.com/docs\" style=\"color:#E21800\">site</a>.</p>";

@@ -7,7 +7,6 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
@@ -20,9 +19,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import infrared5.com.red5proandroid.publish.Publish;
+
 import infrared5.com.red5proandroid.AppState;
 import infrared5.com.red5proandroid.R;
+import infrared5.com.red5proandroid.publish.Publish;
 
 public class SettingsDialogFragment extends DialogFragment {
 
@@ -40,43 +40,46 @@ public class SettingsDialogFragment extends DialogFragment {
         fragment.state = state;
         return fragment;
     }
-    public void setSpinnerAdapter(ArrayAdapter list){
+    public void setSpinnerAdapter(ArrayAdapter list) {
         this.adapter=list;
         defaultResolution=-1;
         boolean has352 = false;
-        boolean has160=false;
+        boolean has160 = false;
 
-            int c = adapter.getCount();
-            for(int j=0;j<c;j++){
-                String rez = String.valueOf(adapter.getItem(j));
-                if("352x288".equals(rez)){
-                    defaultResolution=j;//not ideal but...
-
-                }else  if("160x120".equals(rez)&& defaultResolution<0){
-                  //  defaultResolution=j;//not good enough...
-                }
-                else  if("176x144".equals(rez)&& defaultResolution<0){
-                  //  defaultResolution=j;//not good enough...
-                }
-                if("320x240".equals(rez)){
-                    defaultResolution=j;//perfect
-                    break;
-                }
-
+        int c = adapter.getCount();
+        for(int j=0; j < c; j++){
+            String rez = String.valueOf(adapter.getItem(j));
+            if("352x288".equals(rez)) {
+                defaultResolution=j;//not ideal but...
             }
-            Log.d("publisher", "setting default resolution "+defaultResolution);
-            if(defaultResolution<0){
-                defaultResolution=0;
-                Log.e("publisher","no currently supported resolution");
+            else  if("160x120".equals(rez)&& defaultResolution<0) {
+              //  defaultResolution=j;//not good enough...
             }
-        if(resolutionPicker!=null){
-            resolutionPicker.setAdapter(adapter);
-            resolutionPicker.setSelection(defaultResolution);
+            else  if("176x144".equals(rez)&& defaultResolution<0) {
+              //  defaultResolution=j;//not good enough...
+            }
 
-            resolutionPicker.setOnItemSelectedListener(getItemSelectedHandlerForResolution());
+            if("320x240".equals(rez)) {
+                defaultResolution=j;//perfect
+                break;
+            }
 
         }
+
+        Log.d("publisher", "setting default resolution "+defaultResolution);
+
+        if(defaultResolution < 0) {
+            defaultResolution=0;
+            Log.e("publisher","no currently supported resolution");
+        }
+
+        if(resolutionPicker!=null) {
+            resolutionPicker.setAdapter(adapter);
+            resolutionPicker.setSelection(defaultResolution);
+            resolutionPicker.setOnItemSelectedListener(getItemSelectedHandlerForResolution());
+        }
     }
+
     public SettingsDialogFragment() {
 
     }
@@ -98,13 +101,10 @@ public class SettingsDialogFragment extends DialogFragment {
         EditText app = getField(v, R.id.settings_appname);
         EditText name = getField(v, R.id.settings_streamname);
 
-
         editor.putString(getPreferenceValue(R.string.preference_host), host.getText().toString());
         editor.putInt(getPreferenceValue(R.string.preference_port), Integer.parseInt(port.getText().toString()));
         editor.putString(getPreferenceValue(R.string.preference_app), app.getText().toString());
         editor.putString(getPreferenceValue(R.string.preference_name), name.getText().toString());
-
-
 
         if(state == AppState.PUBLISH) {
             CheckBox cb = (CheckBox)v.findViewById(R.id.settings_audio);
@@ -115,7 +115,6 @@ public class SettingsDialogFragment extends DialogFragment {
             editor.putBoolean(getPreferenceValue(R.string.preference_audio), cb.isChecked());
             editor.putBoolean(getPreferenceValue(R.string.preference_video), cbv.isChecked());
         }
-
 
         editor.commit();
     }
@@ -146,23 +145,22 @@ public class SettingsDialogFragment extends DialogFragment {
                 break;
         }
     }
-      private AdapterView.OnItemSelectedListener getItemSelectedHandlerForResolution(){
-          return new AdapterView.OnItemSelectedListener() {
-              @Override
-              public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                  Log.d("publisher"," selected item "+String.valueOf(adapterView.getSelectedItem()+"  i:" +i+"  l :"+l));
 
-                  Publish.selected_item=String.valueOf(adapterView.getSelectedItem());
+    private AdapterView.OnItemSelectedListener getItemSelectedHandlerForResolution(){
+         return new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                 Log.d("publisher"," selected item "+String.valueOf(adapterView.getSelectedItem()+"  i:" +i+"  l :"+l));
+                 Publish.selected_item = String.valueOf(adapterView.getSelectedItem());
+                 Publish.preferedResolution = adapterView.getSelectedItemPosition();
+             }
 
-                  Publish.preferedResolution=adapterView.getSelectedItemPosition();
-              }
+             @Override
+             public void onNothingSelected(AdapterView<?> adapterView) {
 
-              @Override
-              public void onNothingSelected(AdapterView<?> adapterView) {
-
-              }
-          };
-      }
+             }
+         };
+    }
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -175,9 +173,6 @@ public class SettingsDialogFragment extends DialogFragment {
             resolutionPicker.setSelection(defaultResolution);
             resolutionPicker.setOnItemSelectedListener(getItemSelectedHandlerForResolution());
         }
-
-
-
 
         ViewGroup streamSettings = (ViewGroup) v.findViewById(R.id.subscribe_settings);
         ViewGroup publishSettings = (ViewGroup) v.findViewById(R.id.publishing_settings);

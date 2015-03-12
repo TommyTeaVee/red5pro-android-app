@@ -5,7 +5,6 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -103,8 +102,6 @@ public class Subscribe extends Activity implements ControlBarFragment.OnFragment
 
     private void startStream() {
 
-
-
         //grab the main view where our video object resides
         View v = this.findViewById(android.R.id.content);
 
@@ -146,11 +143,9 @@ public class Subscribe extends Activity implements ControlBarFragment.OnFragment
         //update the state for the toggle button
         setStreaming(true);
 
-
     }
 
-    private void stopStream(){
-
+    private void stopStream() {
 
         if(stream != null) {
             View v = this.findViewById(android.R.id.content);

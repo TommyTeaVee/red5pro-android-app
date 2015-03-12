@@ -1,8 +1,5 @@
 package infrared5.com.red5proandroid.hostlist;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +7,17 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.infrared5.secondscreen.client.HostInfo;
 import com.infrared5.secondscreen.client.HostListListener;
 import com.infrared5.secondscreen.client.SecondScreenService;
 
-import com.infrared5.secondscreen.client.HostInfo;
+import java.util.ArrayList;
+import java.util.List;
 
 import infrared5.com.red5proandroid.R;
 
 class HostListAdaptor extends BaseAdapter implements HostListListener {
+
 	private final List<HostInfo> mHosts;
 	private final LayoutInflater mInflater;
 	private final SecondScreenService mService;

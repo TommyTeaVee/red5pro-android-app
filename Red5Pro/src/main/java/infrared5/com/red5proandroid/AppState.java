@@ -1,14 +1,5 @@
 package infrared5.com.red5proandroid;
 
-import com.infrared5.secondscreen.client.SecondScreen;
-
-import infrared5.com.red5proandroid.publish.Publish;
-import infrared5.com.red5proandroid.secondscreen.SecondScreenActivity;
-import infrared5.com.red5proandroid.subscribe.Subscribe;
-
-/**
- * Created by toddanderson on 10/23/14.
- */
 public enum AppState {
     PUBLISH(0),
     SUBSCRIBE(1),

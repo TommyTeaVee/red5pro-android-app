@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.infrared5.secondscreen.client.HostInfo;
 import com.infrared5.secondscreen.client.SecondScreenConfig;

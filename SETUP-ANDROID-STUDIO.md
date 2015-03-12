@@ -67,7 +67,7 @@ From the **Android Studio** IDE, select to launch the application onto a connect
 ![Select To Install App on Device](http://infrared5.github.io/red5pro-android-app/images/gradle-setup-5.png)
 
 
-### Note: Due to the Android Emulator not providing a proper Network Resource, the Red5 Pro application requires to be launched onto a physical device in order to test and use.
+#### Note: Due to the Android Emulator not providing a proper Network Resource, the Red5 Pro application requires to be launched onto a physical device in order to test and use.
 
 Once the application is launched on your chosen device, happy streaming and second screening!
 

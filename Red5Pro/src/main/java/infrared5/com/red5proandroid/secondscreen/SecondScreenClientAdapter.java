@@ -4,9 +4,6 @@ import com.infrared5.secondscreen.client.HostInfo;
 
 import java.util.List;
 
-/**
- * Created by Andy Shaules on 10/8/2014.
- */
 public interface SecondScreenClientAdapter {
 
     public void showControls(boolean hasHost);

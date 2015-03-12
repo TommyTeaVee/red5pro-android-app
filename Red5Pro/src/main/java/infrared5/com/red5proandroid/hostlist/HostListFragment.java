@@ -16,15 +16,15 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ListView;
 
+import com.infrared5.secondscreen.client.HostInfo;
+import com.infrared5.secondscreen.client.RegistryConnectionListener;
+import com.infrared5.secondscreen.client.SecondScreenConnection;
+import com.infrared5.secondscreen.client.SecondScreenService;
+
 import infrared5.com.red5proandroid.AppState;
 import infrared5.com.red5proandroid.ControlBarFragment;
 import infrared5.com.red5proandroid.R;
 import infrared5.com.red5proandroid.secondscreen.SecondScreenActivity;
-
-import com.infrared5.secondscreen.client.HostInfo;
-import com.infrared5.secondscreen.client.SecondScreenConnection;
-import com.infrared5.secondscreen.client.SecondScreenService;
-import com.infrared5.secondscreen.client.RegistryConnectionListener;
 
 public class HostListFragment extends ListFragment implements RegistryConnectionListener, ControlBarFragment.OnFragmentInteractionListener {
 

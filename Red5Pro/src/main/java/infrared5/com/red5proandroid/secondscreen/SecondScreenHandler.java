@@ -1,5 +1,7 @@
 package infrared5.com.red5proandroid.secondscreen;
 
+import android.content.Context;
+
 import com.infrared5.secondscreen.client.ConnectFailureType;
 import com.infrared5.secondscreen.client.ConnectListener;
 import com.infrared5.secondscreen.client.HostInfo;
@@ -12,13 +14,8 @@ import com.infrared5.secondscreen.client.SecondScreenConnection;
 import com.infrared5.secondscreen.client.SecondScreenService;
 import com.infrared5.secondscreen.client.SecondScreenView;
 
-import android.content.Context;
-
 import java.util.List;
 
-/**
- * Created by Andy Shaules on 9/23/2014.
- */
 public class SecondScreenHandler extends SecondScreenConnection implements RegistryConnectionListener, HostListListener,ConnectListener {
     /**
      * The SecondScreen configuration
@@ -71,7 +68,6 @@ public class SecondScreenHandler extends SecondScreenConnection implements Regis
         service.addRegistryConnectionListener(this);
         service.addHostListListener(this);
         service.addConnectListener(this);
-
     }
 
     @Override

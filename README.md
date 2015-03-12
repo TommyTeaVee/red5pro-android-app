@@ -15,15 +15,15 @@ Quickstart
 Requirements
 ---
 
-* Android SDK
+* [Android SDK](#android-sdk)
 
 ### Android SDK
 
-[&gt; Android SDK homepage](http://developer.android.com/sdk/index.html)
+#### [&gt; Android SDK homepage](http://developer.android.com/sdk/index.html)
 
 From the [Android SDK downloads page](http://developer.android.com/sdk/installing/index.html) you can choose to  install the SDK bundle for:
 
-* [Standalone](http://developer.android.com/sdk/installing/index.html?pkg=tools) 
+* [Standalone](http://developer.android.com/sdk/installing/index.html?pkg=tools)
 * [Android Studio](http://developer.android.com/sdk/installing/index.html?pkg=studio)
 
 Follow the instructions found on those pages for either choice.
@@ -37,22 +37,33 @@ The [Gradle Wrapper](https://gradle.org/docs/current/userguide/gradle_wrapper.ht
 
 After installing the [Standalone Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools), you will need to modify the `sdk.dir` path from [local.properties.template](local.properties.template) and save the file as `local.properties` in the project root directory. This file is used by gradle to build the project.
 
+### On &#42;nix
+
+#### change local.properties On &#42;nix
 ```
 $ echo "sdk.dir=/path/to/android/sdk/install" > local.properties
 ```
 
-_replace `/path/to/android/sdk/install` with the path to where you installed the Android SDK._
+_replace `/path/to/android/sdk/install` with the path to where you installed the Android SDK._a
 
 Once the `local.properties` file is set, issue the following command to build the project:
 
-### On OSX
+#### build
 ```
 $ ./gradlew clean build
 ```
 
-### on Windows
+### On Windows
+
+#### change local.properties on Windows
+Open the [local.properties.template](local.properties.template) file, modify the `sdk.dir` value to the path where you installed the Android SDK and save the file as __local.properties__.
+
+Once the `local.properties` file is set, issue the following command to build the project:
+
+#### build
 **TBD** (Double click on `gradle.bat`?)
 
-
+Output
+---
 The Red5Pro APK will be built and available in `Red5Pro/build/outputs/apk`.
 

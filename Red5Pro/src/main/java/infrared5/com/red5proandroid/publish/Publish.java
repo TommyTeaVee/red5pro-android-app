@@ -334,16 +334,16 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
             }
 
             //currently a timing hack. Won't be in final SDK
-            mHand.postDelayed(new Runnable() {
-
-                public void run() {
+//            mHand.postDelayed(new Runnable() {
+//
+//                public void run() {
                     //start publishing
                     isPublishing = true;
                     stream.publish(Publish.config.name);
                     camera.startPreview();
-                }
-
-            }, 1000);
+//                }
+//
+//            }, 1000);
 
         }
     }

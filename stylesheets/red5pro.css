@@ -1,0 +1,32 @@
+h4 {
+	font-size: 16px;
+}
+
+.setup-list {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.setup-link {
+	font-weight: 700;
+	font-family: Arvo, Monaco, serif;
+	margin: 10px 0;
+	color: #C30000;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.requirements-list {
+	color: #C30000;
+	padding-top: 5px;
+	padding-left: 0px;
+}
+
+.requirements-link {
+	margin: 5px 0;
+	cursor: pointer;
+}
+
+.device-notice {
+	font-size: 16px;
+}

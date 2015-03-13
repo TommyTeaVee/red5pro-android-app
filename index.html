@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Red5pro-android-app by infrared5</title>
+    <title>Red5Pro-Android-App by infrared5</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/red5pro.css">
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
@@ -16,8 +17,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">Red5pro-android-app</h1>
-        <p class="header">Android-based Red5Pro Application with Streaming and Second Screen integration</p>
+        <h1 class="header">Red5Pro-Android-App</h1>
+        <p class="header">Android-based Application with <a href="http://red5pro.com" target="_blank">Red5 Pro</a> Streaming and Second Screen integration.</p>
 
         <ul>
           <li class="download"><a class="buttons" href="https://github.com/infrared5/red5pro-android-app/zipball/master">Download ZIP</a></li>
@@ -27,43 +28,187 @@
 
         <p class="header">This project is maintained by <a class="header name" href="https://github.com/infrared5">infrared5</a></p>
 
-
       </header>
       <section>
         <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <a id="welcome" class="anchor" href="#welcome" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Red5 Pro Android Application.
+        </h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+        <p>This Android application project shows how to integrate the <a href="http://red5pro.com" target="_blank">Red5 Pro</a> SDKs to enable live streaming and second screen experiences on a mobile device.</p>
+        <p>To quickly get up and running and build* the APK:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+        <pre><code>$ git clone git@github.com:infrared5/red5pro-android-app.git
+$ cd red5pro-android-app
+$ echo "sdk.dir=/path/to/android/sdk/install" > local.properties
+$ ./gradlew clean build</code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+        <p><em>*Change the `sdk.dir` path to your local Android SDK installation directory.</em></p>
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+        <h3>
+          <a id="project-setup" class="anchor" href="#project-setup" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Project SetUp
+        </h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+        <p>Use these handy project setup instructions to start building and using the Red5 Pro Android Application quickly!</p>
 
-<h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+        <ul class="setup-list">
+          <li>
+            <p class="setup-link">
+              <a href="#android-studio-setup" class="anchor" aria-hidden="true">
+                Using Android Studio
+              </a>
+            </p>
+          </li>
+          <li>
+            <p class="setup-link">
+              <a href="#command-line-setup" class="anchor" aria-hidden="true">
+                Using Command Line
+              </a>
+            </p>
+          </li>
+        </ul>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+        <h3>
+          <a id="requirements" class="anchor" href="#requirements" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Requirements
+        </h3>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+        <ul class="requirements-list"> 
+          <li>
+            <p class="requirements-link">
+              <a href="http://red5pro.com" target="_blank" >Red5 Pro Server</a>
+            </p>
+          </li>
+          <li>
+            <p class="requirements-link">
+              <a href="https://github.com/infrared5/red5pro-android-app/tree/master#android-sdk" target="_blank">Android SDK</a>
+            </p>
+          </li>
+        </ul>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+        <p>The Red5 Pro SDKs have a minimum support for <a href="http://developer.android.com/about/versions/android-4.1.html" target="_blank">Android 4.1 / API Level: 16</a>.</p>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+        <h4>Red5 Pro Server</h4>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+        <p>The Red5 Pro Server is build on the Open Source <a href="https://github.com/Red5/red5-server" target="_blank">Red5 Server</a> and allows to build scalable live streaming and second screen applications.</p>
+
+        <p>The example application provided in this project repository integrates the Red5 Pro Native SDKs and libraries that enable live streaming and second screen experiences. You will need to setup a Red5 Pro server - either on your local machine or remotely - in order to stream video and communicate with a second screen host.</p>
+
+        <p>More information about Red5 Pro, its SDKs and setup can be found in the online <a href="http://red5pro.com/docs/" target="_blank">Red5 Pro Documentation</a>.</p>
+
+        <p><strong>To register an account and start using Red5 Pro in production, visit the <a rhef="https://account.red5pro.com/register" target="_blank">Red5 Pro Accounts</a>!</strong></p>
+
+        <h4>Android SDK</h4>
+
+        <p class="requirements-link">
+          Visit the <a href="http://developer.android.com/sdk/index.html" target="_blank">Android SDK Homepage</a>. From the Android SDK downloads page you can choose to install the SDK bundle for:</p>
+
+        <ul class="requirements-list"> 
+          <li>
+            <p class="requirements-link">
+              <a href="http://developer.android.com/sdk/installing/index.html?pkg=tools" target="_blank">Standalone</a>
+            </p>
+          </li>
+          <li>
+            <p class="requirements-link">
+              <a href="http://developer.android.com/sdk/installing/index.html?pkg=studio"target="_blank">Android Studio</a>
+            </p>
+          </li>
+        </ul>
+
+        <p>Follow the instructions found on those pages for either choice.</p>
+
+        <p><strong>If you choose to install with <a href="http://developer.android.com/sdk/installing/index.html?pkg=studio" target="_blank">Android Studio</a>, follow along with the <a href="#android-studio-setup">Android Studio Project Setup</a> instructions for importing and building the project.</strong></p>
+
+        <h3>
+          <a id="command-line-setup" class="anchor" href="#command-line-setup" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Building on the Command Line
+        </h3>
+
+        <p>Begin by cloning the repoditory:</p>
+
+        <pre><code>$ git clone git@github.com:infrared5/red5pro-android-app.git
+$ cd red5pro-android-app</code></pre>
+
+        <p>Once you have cloned this repository onto your local machine and are in the repositories root directory, you can build the project.</p>
+
+        <h4>Gradle Build</h4>
+
+        <p>The <a href="https://gradle.org/docs/current/userguide/gradle_wrapper.html" target="_blank">Gradle Wrapper</a> is used to build the <strong>Red5 Pro</strong> APK.</p>
+
+        <p>This project includes the Gradle libraries required to build the application, so there are no additional dependencies to be installed in order to continue.</p>
+
+        <p>After installing the <a href="http://developer.android.com/sdk/installing/index.html?pkg=tools" target="_blank">Standalone Android SDK</a>, you will need to modify the <code>sdk.dir</code> path from <code>local.properties.template</code> and save the file as <code>local.properties</code> in the project root directory. This file is used by <strong>Gradle</strong> to build the project.</p>
+
+        <h4>On *nix</h4>
+        <p>Define the Android SDK target and build:</p>
+
+        <pre><code>$ echo "sdk.dir=/path/to/android/sdk/install" > local.properties
+$ ./gradlew clean build</code></pre>
+
+        <p><strong>Be sure to change the sdk.dir value to your local Android SDK install directory.</strong></p>
+
+        <h4>On Windows</h4>
+        <p>Open the <code>local.properties.template</code> file, modify the <code>sdk.dir</code> value to the path where you installed the <strong>Android SDK</strong> and save the file as <code>local.properties</code>.</p>
+
+        <p>Once the local.properties file is set, double-click on the <code>gradlew.bat</code> file.</p>
+
+        <h3>
+          <a id="android-studio-setup" class="anchor" href="#android-studio-setup" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Android Studio Project Setup
+        </h3>
+
+        <p>This section requires that you have the <a href="http://developer.android.com/sdk/installing/index.html?pkg=studio" target="_blank">Android Studio</a> IDE already installed on your machine.</p>
+
+        <p><a href="http://developer.android.com/sdk/installing/index.html?pkg=studio" target="_blank">Download Android Studio</a></p>
+
+        <p><em>Follow the instructions on the download page to install the Android Studio IDE onto you machine.</em></p>
+
+        <p>Begin by cloning the repoditory:</p>
+
+        <pre><code>$ git clone git@github.com:infrared5/red5pro-android-app.git
+$ cd red5pro-android-app</code></pre>
+
+        <p>Once you have cloned this repository onto your local machine and are in the repositories root directory, you can launch <strong>Android Studio</strong> and import the project.</p>
+
+        <h4>Import the Red5 Pro Project</h4>
+
+        <p>The project included in this repository uses Gradle for its build process. Thankfully, <strong>Android Studio</strong> makes <a href="http://gradle.org/" target="_blank">Gradle</a> integration pretty seemless.</p>
+
+        <p>Launch <strong>Android Studio</strong> and select <code>Import project</code>.<img src="images/gradle-setup-1.png" alt="Import Red5 Pro Android Project"></p>
+
+        <p>In the file browser dialog shown in the <strong>Android Studio</strong> IDE, navigate to your local clone of this repoditory, select the root directory and click <code>OK</code>.<img src="images/gradle-setup-2.png" alt="Select the Red5 Pro Android Project"></p>
+
+        <p>You may see an alert regarding unconfigured <strong>Gradle</strong> settings. This is fine.</p>
+        <p>We have taken care including the bare minimum to get up and running in <strong>Android Studio</strong> with Gradle integration. The <strong>Android Studio</strong> IDE will handle setting up the project with the proper <strong>Gradle</strong> dependencies that are defined in the build file and wrapper.</p>
+
+        <p>Click <code>OK</code> to continue.<img src="images/gradle-setup-3.png" alt="Accept Gradle Sync"></p>
+
+        <p>Once the <strong>Android Studio</strong> IDE generates the project, it will present the workspace. Additionally, if you visit the directory into which you cloned this repository you will see <code>.iml</code> files and a new <code>.gradle/</code> directory. This is part of the Android Studio workspace setup and expected.</p>
+
+        <p>From the <strong>Android Studio</strong> IDE, select to launch the application onto a connected device by clicking either the green arrow or bug icon to the right of the <code>Red5 Pro Configuration</code> in the top bar of the workspace:<img src="images/gradle-setup-4.png" alt="Android Studio Workspace"></p>
+        <p><img src="images/gradle-setup-5.png" alt="Launch on Connected Device"></p>
+
+        <p>Once the application is launched on your chosen device, happy streaming and second screening!</p>
+
+        <p class="device-notice"><strong>Note:</strong> Due to the Android Emulator not providing a proper Network Resource, the Red5 Pro application requires to be launched onto a physical device in order to test and use.</p>
+
       </section>
       <footer>
-        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p>
+          <small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small>
+        </p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->

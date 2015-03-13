@@ -41,7 +41,7 @@ $ cd red5pro-android-app
 Once you have cloned this repository onto your local machine and are in the repositories root directory, you can launch **Android Studio** and import the project.
 
 ### Import the Red5 Pro Project
-The project included in this repository uses [Gradle](http://gradle.org) for its build process. Thankfully, **Android Sutdio** makes **Gradle** integration pretty seemless :)
+The project included in this repository uses [Gradle](http://gradle.org) for its build process. Thankfully, **Android Studio** makes **Gradle** integration pretty seemless :)
 
 Launch **Android Studio** and select `Import project`.
 

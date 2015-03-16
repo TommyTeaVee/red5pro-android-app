@@ -3,6 +3,8 @@ Red5 Pro Android Application
 
 > This Android application project shows how to integrate the [Red5 Pro](http://red5pro.com) SDKs to enable live streaming and second screen experiences on a mobile device.
 
+Interested in the iOS version? [Find it here](http://infrared5.github.io/red5pro-ios-app/)
+
 Quickstart
 ---
 

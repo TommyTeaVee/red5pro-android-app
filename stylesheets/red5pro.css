@@ -30,3 +30,8 @@ h4 {
 .device-notice {
 	font-size: 16px;
 }
+
+.other-header {
+  color: white;
+  border-bottom: 0px;
+}

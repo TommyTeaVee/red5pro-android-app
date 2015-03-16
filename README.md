@@ -11,7 +11,7 @@ Quickstart
 ### [&gt; Using Command Line](#building-on-the-command-line)
 
 ```
-$ git clone git@github.com:infrared5/red5pro-android-app.git
+$ git clone https://github.com/infrared5/red5pro-android-app.git
 $ cd red5pro-android-app
 $ echo "sdk.dir=/path/to/android/sdk/install" > local.properties
 $ ./gradlew clean build

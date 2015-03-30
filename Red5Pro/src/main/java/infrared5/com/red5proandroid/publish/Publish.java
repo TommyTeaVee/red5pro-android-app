@@ -333,9 +333,10 @@ public class Publish extends Activity implements SurfaceHolder.Callback, View.On
                 stream.attachMic(r5Mic);
             }
 
-            isPublishing = true;
-            stream.publish(Publish.config.name);
-            camera.startPreview();
+
+                    isPublishing = true;
+                    stream.publish(Publish.config.name, R5Stream.RecordType.Live);
+                    camera.startPreview();
 
         }
     }
